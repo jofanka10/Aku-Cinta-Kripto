@@ -132,9 +132,48 @@ K15 = 101111 111001 000110 001101 001111 010011 111100 001010
 K16 = 110010 110011 110110 001011 000011 100001 011111 110101
 ```
 
+## Proses Enkripsi Data
+Untuk melakukan enkripsi, kita gunakan Feistel Cipher.
+
+<img width="732" height="997" alt="image" src="https://github.com/user-attachments/assets/05cd7da2-3a27-4b71-8a2b-47cb1ddacf30" />
+
+Untuk langkah-langkahnya seperti ini.
+
+1. Pada bagian kanan (32-bit R0) melakukan serangkaian ... terhadap kunci pertama (K1) dengan proses sebagai berikut.
+   
+   a. Perlu diingat bahwa bentuk dari
+      K1 = 48-bit
+      R0 = 32-bit
+
+   b. Lakukan Initial Permuataion (IP) pada Plaintext M menggunakan tabel IP.
+   
+      <img width="552" height="286" alt="image" src="https://github.com/user-attachments/assets/b88c84a5-586d-4f7c-b786-cf7343c2e35a" />
+
+      Sehingga Plantext yang sebelumnya
+      ```
+      M = 0000000100100011010001010110011110001001101010111100110111101111
+      ```
+      menjadi
+      ```
+      
+      ```
 
 
+   c. Kita perlu udah R0 ini ke format 48-bit menggunakan E-Bits.
+   
+      <img width="765" height="533" alt="image" src="https://github.com/user-attachments/assets/c24b5291-9875-4d82-a6f2-305a2b4dec15" />
 
+      Sehingga R0 yang sebelumnya
+      ```
+      R0 = 10001001101010111100110111101111
+      ```
+
+      menjadi
+      ```
+      R0 48-bit = 
+
+
+   
 
 
 

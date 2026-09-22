@@ -1,4 +1,4 @@
-Gas kita kerjain ini DES yang mumet itu.
+kita kerjain ini DES yang mumet itu.
 
 
 # Tugas <img width="1246" height="193" alt="image" src="https://github.com/user-attachments/assets/46b0aeb1-9c41-45e2-9ed9-15058c09f51b" />
@@ -151,12 +151,14 @@ Untuk langkah-langkahnya seperti ini.
 
       Sehingga Plantext yang sebelumnya
       ```
-      M = 0000000100100011010001010110011110001001101010111100110111101111
+      M = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
       ```
-      menjadi
+      menjadi seperti ini
       ```
-      
+      L0 = 1100 1100 0000 0000 1100 1100 1111 1111
+      R0 = 1111 0000 1010 1010 1111 0000 1010 1010
       ```
+      Note: Setelah melakukan Initial Permutation, Plaintext M langsung dibagi dua kiri kanan (masing-masing 32-bit).
 
 
    c. Kita perlu udah R0 ini ke format 48-bit menggunakan E-Bits.
@@ -165,12 +167,26 @@ Untuk langkah-langkahnya seperti ini.
 
       Sehingga R0 yang sebelumnya
       ```
-      R0 = 10001001101010111100110111101111
+      R0 = 1111 0000 1010 1010 1111 0000 1010 1010
       ```
-
       menjadi
       ```
-      R0 48-bit = 
+      R0 48-bit = 011110 100001 010101 010101 011110 100001 010101 010101
+      ```
+
+      Setelah itu, R0 di-XOR-kan dengan K1
+      ```
+      R0 48-bit      = 011110 100001 010101 010101 011110 100001 010101 010101
+      K1             = 000110 110000 001011 101111 111111 000111 000001 110010
+                       ——————————————————————————————————————————————————————— ⊕
+      R0 48-bit ⊕ K1 = 011000 010001 011110 111010 100001 100110 010100 100111
+      ```
+
+
+      Hasil XOR tadi diubah dari 48-bit menjadi 32-bit menggunakan S-Box.
+
+      <img width="1685" height="796" alt="image" src="https://github.com/user-attachments/assets/81dd24b9-1f32-43f4-9fa9-1bdd7936cf83" />
+
 
 
    
